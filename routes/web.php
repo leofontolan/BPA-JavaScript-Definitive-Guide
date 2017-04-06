@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +20,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group([
+    'prefix' => 'admin',
+    'as' => 'admin.',
+    'middleware' => 'can:admin',
+], function(){
+    Route::get('/', function () {
+        return "Área Administrativa";
+    });
+});
+
+Route::get('/force-login', function(){
+    \Illuminate\Support\Facades\Auth::loginUsingId(1);
+});
