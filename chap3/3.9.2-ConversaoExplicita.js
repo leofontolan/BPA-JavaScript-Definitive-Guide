@@ -36,3 +36,14 @@ console.log("\n");
 console.log(binary);
 console.log(octal);
 console.log(hex);
+
+//Conversão financeira e cientifica
+let a = 123456.789;
+a.toFixed(0) // => "1234567"
+a.toFixed(2) // => "123456.79"
+a.toFixed(5) // => "123456.78900"
+a.toExponential(1) // => "1.2e+5"
+a.toExponential(3) // => "1.235e+5"
+a.toPrecision(4) // => "12345.7"
+a.toPrecision(7) // => "123456.789"
+a.toPrecision(10) // => "123456.789000"
