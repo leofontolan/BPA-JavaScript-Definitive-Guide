@@ -47,3 +47,17 @@ a.toExponential(3) // => "1.235e+5"
 a.toPrecision(4) // => "12345.7"
 a.toPrecision(7) // => "123456.789"
 a.toPrecision(10) // => "123456.789000"
+
+
+let number = new Number(42);
+let number2 = 42;
+
+console.log("Tentando entender objetos wrapper");
+console.log(number);
+console.log(typeof(number));
+console.log(typeof(number2));
+
+let t ="1";
+console.log(typeof(+t))   
+
+console.log(parseInt("1,4"));
