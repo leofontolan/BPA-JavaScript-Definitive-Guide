@@ -8,4 +8,3 @@ for(let i = 0; i < 4; i++) {
  addr += customer[`address${i}`] + "\n";
  console.log(customer[`address${i}`] + "\n");
 }
-
