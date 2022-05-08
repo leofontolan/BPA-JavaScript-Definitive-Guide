@@ -25,3 +25,6 @@ q.x + q.y // =>3; x e y são herdados de o e p
 console.log(q.x);
 console.log(q.y);
 console.log(q.z);
+
+console.log('\n');
+console.log(q.notExist); // =>undefined
