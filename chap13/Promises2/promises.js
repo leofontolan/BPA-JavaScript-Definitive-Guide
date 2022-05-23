@@ -1,5 +1,7 @@
 const fs = require('fs');
 const readline = require('readline');
+const { promisify } = require('util');
+writeFileAsync = promisify(fs.writeFile)
 
 const terminal = readline.createInterface({
     input: process.stdin,
@@ -7,6 +9,18 @@ const terminal = readline.createInterface({
 });
 
 
+;(async function main(){
+    try {
+        await writeFileAsync('./teste', 'testando...'); 
+    } catch (error) {
+        console.error('deu ruim!', error);
+    }finally{
+        console.log('Finalizado...');
+        terminal.close();
+    }
+
+})();
+/*
 terminal.question('Qual é o nome do arquivo que deseja trabalhar?\n', fileName => {
 
     fs.exists(fileName, exists => {
@@ -48,3 +62,4 @@ terminal.question('Qual é o nome do arquivo que deseja trabalhar?\n', fileName 
     });
     terminal.close();
 });
+*/
