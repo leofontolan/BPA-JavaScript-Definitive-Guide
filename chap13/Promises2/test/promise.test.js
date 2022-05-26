@@ -1,5 +1,7 @@
-const sum = require('./sum');
+const NPromise = require('./new_promise');
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
+describe ('Promise', () => {
+  it('should create a new Promise with pending state', () => {
+
+  });
 });
