@@ -1,3 +1,9 @@
+const STATE = {
+    PENDING: 'pending',
+    FULFILLED: 'fulfilled',
+    REJECTED: 'rejected'
+}
+
 class NPromise{
     
     constructor(executor){
@@ -5,11 +11,28 @@ class NPromise{
             throw new Error('Promise executor must be a function');
         }
 
-        this.state = 'pending';
+        this.state = STATE.PENDING;
         this.value = undefined;
         this.onFulfillChain = [];
-        this.onRejectChain = [];
+        this.onRejectCallChain = [];
+
+        executor(this.resolve.bind(this), this.reject);
     }
+
+    resolve(res){
+        if(this.state !== STATE.PENDING){
+            return;
+        }
+
+        this.state = STATE.FULFILLED;
+        this.value = res;
+    }
+
+    reject(){
+
+    }
+
+
 }
 
 module.exports = NPromise;
