@@ -1,4 +1,11 @@
 const fs = require('fs');
+const util = require('util');
+
+
+//converter a método fs.readFile para uma promise.
+const readFilePromise = util.promisify(fs.readFile);
+
+
 
 console.log(1);
 
@@ -22,6 +29,10 @@ const fileContent = fs.readFile('chap13/Promises2/callbacks/test.txt', 'utf8',
         });
 
 console.log(3);
+
+readFilePromise('chap13/Promises2/callbacks/test.txt', 'utf8').then(data => {
+    console.log(data);
+});
 
 
 console.log(4);
