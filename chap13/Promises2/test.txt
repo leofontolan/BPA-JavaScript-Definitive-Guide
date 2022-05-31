@@ -1,2 +1,0 @@
-Esse é um arquivo de texto simples, como um arquivo de texto, mas com um formato txt.
-É apenas para testes, tem um conteúdo qualquer.
