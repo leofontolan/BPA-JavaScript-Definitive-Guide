@@ -7,9 +7,12 @@ describe("Promise", () => {
         expect(promise.state).toBe('pending');
         expect(promise.value).toBe(undefined);
     });
+
+    describe("When fulfilled", () => {
+        it('should then a Promise', done => {
+            return new NPromise((resolve) => resolve({data: 'fake'}));
+        });
+    });
 });
 
 
-describe("When fulfilled", () => {
-    
-});
